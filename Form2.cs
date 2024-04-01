@@ -1,6 +1,7 @@
 ﻿using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,16 @@ namespace GeograpicInformationSystemProject
 				{
 					dataGridView2.DataSource = table;
 				}
+
+				for (int i = 0; i < table.Rows.Count; i++)
+				{
+					vehiclesList.Add(new Vehicle(table.Rows[i][0].ToString(), 
+																			table.Rows[i][1].ToString(), 
+																			new PointLatLng(Convert.ToDouble(table.Rows[i][4]), 
+																			Convert.ToDouble(table.Rows[i][5])), 
+																			table.Rows[i][2].ToString(), 
+																			table.Rows[i][3].ToString()));
+				}
 			}
 			catch (Exception ex)
 			{
@@ -68,13 +79,50 @@ namespace GeograpicInformationSystemProject
 					connection.Close();
 			}
 
-
+			ShowVehicleOnMap();
 		}
 
 		private void Form2_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			map2.Dispose();
 			Application.Exit();
+		}
+
+		private void ShowVehicleOnMap()
+		{
+			foreach (var vehicle in vehiclesList)
+			{
+
+				GMarkerGoogle marker = new GMarkerGoogle(vehicle.Location, GMarkerGoogleType.green_small);
+				overlayOne.Markers.Add(marker);
+
+				marker.ToolTipText = string.Format("\nVehicle\nPlate: {0}\nType: {1}\nFrom: {2}\nTo: {3}\n", vehicle.Plate, vehicle.VehicleType, vehicle.From, vehicle.To);
+				marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+				marker.ToolTip.Fill = Brushes.AliceBlue;
+				marker.ToolTip.Foreground = Brushes.Black;
+				marker.ToolTip.Stroke = Pens.Black;
+				marker.ToolTip.TextPadding = new Size(10, 10);
+				marker.Tag = vehicle.Plate;
+
+			}
+		}
+
+		private void map2_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+		{
+			string selectedVehicle = item.Tag.ToString();
+
+			foreach (var vehicle in vehiclesList)
+			{
+				if (vehicle.Plate == selectedVehicle)
+				{
+					textBoxPlate2.Text = vehicle.Plate;
+					textBoxVehicleType2.Text = vehicle.VehicleType;
+					textBoxFrom2.Text = vehicle.From;
+					textBoxTo2.Text = vehicle.To;
+					break;
+
+				}
+			}
 		}
 	}
 }

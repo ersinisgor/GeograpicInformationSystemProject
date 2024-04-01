@@ -67,6 +67,7 @@
 			this.map2.Size = new System.Drawing.Size(1057, 430);
 			this.map2.TabIndex = 0;
 			this.map2.Zoom = 0D;
+			this.map2.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.map2_OnMarkerClick);
 			// 
 			// dataGridView2
 			// 
