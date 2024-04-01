@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.map = new GMap.NET.WindowsForms.GMapControl();
+			this.map1 = new GMap.NET.WindowsForms.GMapControl();
 			this.labelPlace2Latitude2 = new System.Windows.Forms.Label();
 			this.labelPlace2Longitude2 = new System.Windows.Forms.Label();
 			this.textBoxPlace2Latitude2 = new System.Windows.Forms.TextBox();
@@ -51,32 +51,32 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// map
+			// map1
 			// 
-			this.map.Bearing = 0F;
-			this.map.CanDragMap = true;
-			this.map.EmptyTileColor = System.Drawing.Color.Navy;
-			this.map.GrayScaleMode = false;
-			this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-			this.map.LevelsKeepInMemory = 5;
-			this.map.Location = new System.Drawing.Point(12, 12);
-			this.map.MarkersEnabled = true;
-			this.map.MaxZoom = 2;
-			this.map.MinZoom = 2;
-			this.map.MouseWheelZoomEnabled = true;
-			this.map.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-			this.map.Name = "map";
-			this.map.NegativeMode = false;
-			this.map.PolygonsEnabled = true;
-			this.map.RetryLoadTile = 0;
-			this.map.RoutesEnabled = true;
-			this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-			this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-			this.map.ShowTileGridLines = false;
-			this.map.Size = new System.Drawing.Size(699, 623);
-			this.map.TabIndex = 0;
-			this.map.Zoom = 0D;
-			this.map.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.map_OnMarkerClick);
+			this.map1.Bearing = 0F;
+			this.map1.CanDragMap = true;
+			this.map1.EmptyTileColor = System.Drawing.Color.Navy;
+			this.map1.GrayScaleMode = false;
+			this.map1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+			this.map1.LevelsKeepInMemory = 5;
+			this.map1.Location = new System.Drawing.Point(12, 12);
+			this.map1.MarkersEnabled = true;
+			this.map1.MaxZoom = 2;
+			this.map1.MinZoom = 2;
+			this.map1.MouseWheelZoomEnabled = true;
+			this.map1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+			this.map1.Name = "map1";
+			this.map1.NegativeMode = false;
+			this.map1.PolygonsEnabled = true;
+			this.map1.RetryLoadTile = 0;
+			this.map1.RoutesEnabled = true;
+			this.map1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+			this.map1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+			this.map1.ShowTileGridLines = false;
+			this.map1.Size = new System.Drawing.Size(699, 623);
+			this.map1.TabIndex = 0;
+			this.map1.Zoom = 0D;
+			this.map1.OnMarkerClick += new GMap.NET.WindowsForms.MarkerClick(this.map_OnMarkerClick);
 			// 
 			// labelPlace2Latitude2
 			// 
@@ -270,7 +270,7 @@
 			this.Controls.Add(this.textBoxPlace2Latitude2);
 			this.Controls.Add(this.labelPlace2Longitude2);
 			this.Controls.Add(this.labelPlace2Latitude2);
-			this.Controls.Add(this.map);
+			this.Controls.Add(this.map1);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -281,7 +281,7 @@
 
 		#endregion
 
-		private GMap.NET.WindowsForms.GMapControl map;
+		private GMap.NET.WindowsForms.GMapControl map1;
 
 		private System.Windows.Forms.Label labelPlace2Latitude2;
 		private System.Windows.Forms.Label labelPlace2Longitude2;

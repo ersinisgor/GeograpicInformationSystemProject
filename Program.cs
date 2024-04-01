@@ -16,7 +16,15 @@ namespace GeograpicInformationSystemProject
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+
+			Form1 mainForm = new Form1();
+			Form2 form2 = new Form2();
+
+			mainForm.Show();
+			form2.Show();
+
+
+			Application.Run(mainForm);
 		}
 	}
 }

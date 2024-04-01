@@ -26,7 +26,7 @@ namespace GeograpicInformationSystemProject
 			CreateVehiclesList();
 		}
 
-		private void CreateVehiclesList()
+		public void CreateVehiclesList()
 		{
 			vehiclesList = new List<Vehicle>();
 
@@ -38,18 +38,18 @@ namespace GeograpicInformationSystemProject
 
 		}
 
-		private void InitializeMap()
+		public void InitializeMap()
 		{
-			map.DragButton = MouseButtons.Left;
-			map.MapProvider = GMapProviders.GoogleMap;
-			map.Position = new GMap.NET.PointLatLng(39.259964455356815, 35.20948397150086);
-			map.MinZoom = 3;
-			map.MaxZoom = 25;
-			map.Zoom = 6;
+			map1.DragButton = MouseButtons.Left;
+			map1.MapProvider = GMapProviders.GoogleMap;
+			map1.Position = new GMap.NET.PointLatLng(39.259964455356815, 35.20948397150086);
+			map1.MinZoom = 3;
+			map1.MaxZoom = 25;
+			map1.Zoom = 6;
 
 
 			overlayOne = new GMapOverlay("OverlayOne");
-			map.Overlays.Add(overlayOne);
+			map1.Overlays.Add(overlayOne);
 
 		}
 
@@ -72,7 +72,7 @@ namespace GeograpicInformationSystemProject
 
 		private void Form1_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			map.Dispose();
+			map1.Dispose();
 			Application.Exit();
 		}
 
